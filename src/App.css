@@ -13,11 +13,95 @@ body {
   text-align: center;
 }
 
+/* تحسين عرض التطبيق للجوال */
 .iraqcoin-app {
   display: flex;
   gap: 32px;
   justify-content: center;
   align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .iraqcoin-app {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    padding: 0 8px;
+  }
+  .main-prices {
+    min-width: unset;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #b6a8e6;
+  }
+  .exchange-box {
+    min-width: unset;
+    padding: 16px 8px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #b6a8e6;
+  }
+  .prices-table th, .prices-table td {
+    font-size: 1rem;
+    padding: 8px;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-prices {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+  .exchange-box {
+    padding: 8px 4px;
+    font-size: 0.95rem;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+  .prices-table th, .prices-table td {
+    font-size: 0.9rem;
+    padding: 4px;
+  }
+}
+    min-width: unset;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #b6a8e6;
+  }
+  .exchange-box {
+    min-width: unset;
+    padding: 16px 8px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #b6a8e6;
+  }
+  .prices-table th, .prices-table td {
+    font-size: 1rem;
+    padding: 8px;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-prices {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+  .exchange-box {
+    padding: 8px 4px;
+    font-size: 0.95rem;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+  .prices-table th, .prices-table td {
+    font-size: 0.9rem;
+    padding: 4px;
+  }
 }
 
 .main-prices {
@@ -155,14 +239,4 @@ body {
 .details-box li {
   font-size: 1rem;
   margin-bottom: 4px;
-}
-.start-btn {
-  background: #5a4be7;
-  color: #fff;
-  border: none;
-  border-radius: 24px;
-  padding: 16px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-top: 8px;
 }

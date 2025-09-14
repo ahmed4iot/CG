@@ -72,44 +72,7 @@ function App() {
         >
           Crypto Gate
         </h1>
-        <div style={{textAlign: 'center', margin: '0 0 32px 0', fontSize: '1.35rem', color: '#5a4be7', fontWeight: '500', background: '#f5f3ff', borderRadius: '18px', padding: '18px 12px', boxShadow: '0 2px 12px #e0d8fa'}}>
-          انطلق بثقة في عالم العملات الرقمية منصتك الآمنة والحديثة لبيع وشراء العملات الرقمية بسهولة وشفافية<br />استمتع بأفضل الأسعار وسرعة التنفيذ ودعم متواصل<br />معنا أنت في قلب المستقبل المالي ابدأ الآن وكن جزءًا من الثورة الرقمية
-        </div>
         <div className="iraqcoin-app">
-          <div className="main-prices">
-            <h2 className="title">أسعار العملات المشفرة الرئيسية</h2>
-            <table className="prices-table">
-              <thead>
-                <tr>
-                  <th>اليوم</th>
-                  <th>السعر الحالي</th>
-                  <th>العملة الرقمية</th>
-                </tr>
-              </thead>
-              <tbody>
-                {loading ? (
-                  <tr><td colSpan={3}>جاري تحميل الأسعار...</td></tr>
-                ) : coins.length === 0 ? (
-                  <tr><td colSpan={3}>تعذر جلب الأسعار</td></tr>
-                ) : (
-                  coins.map((coin) => (
-                    <tr key={coin.symbol}>
-                      <td style={{ color: 'green', fontWeight: 'bold' }}>{coin.change}%</td>
-                      <td style={{ fontWeight: 'bold' }}>${coin.price.toLocaleString()}</td>
-                      <td style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'right' }}>
-                        {coin.name}
-                        <span style={{ color: '#888', marginRight: '8px' }}>{coin.symbol}</span>
-                        <img src={coin.icon} alt={coin.symbol} style={{ width: 32, height: 32 }} />
-                      </td>
-                    </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
-            <button className="prices-btn" onClick={() => setShowMore((prev) => !prev)}>
-              {showMore ? 'إخفاء العملات الإضافية' : 'أسعار العملات'}
-            </button>
-          </div>
           <div className="exchange-box">
             <div className="exchange-header">
               <button className={`tab${isSell ? ' active' : ' inactive'}`} onClick={() => setIsSell(true)}>بيع</button>
@@ -166,9 +129,45 @@ function App() {
                 <h4>تفاصيل الصرف</h4>
                 <div style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>العمولة 2%</div>
               </div>
-              <button className="start-btn">ابدأ</button>
             </div>
           </div>
+          <div className="main-prices">
+            <h2 className="title">أسعار العملات المشفرة الرئيسية</h2>
+            <table className="prices-table">
+              <thead>
+                <tr>
+                  <th>اليوم</th>
+                  <th>السعر الحالي</th>
+                  <th>العملة الرقمية</th>
+                </tr>
+              </thead>
+              <tbody>
+                {loading ? (
+                  <tr><td colSpan={3}>جاري تحميل الأسعار...</td></tr>
+                ) : coins.length === 0 ? (
+                  <tr><td colSpan={3}>تعذر جلب الأسعار</td></tr>
+                ) : (
+                  coins.map((coin) => (
+                    <tr key={coin.symbol}>
+                      <td style={{ color: 'green', fontWeight: 'bold' }}>{coin.change}%</td>
+                      <td style={{ fontWeight: 'bold' }}>${coin.price.toLocaleString()}</td>
+                      <td style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'right' }}>
+                        {coin.name}
+                        <span style={{ color: '#888', marginRight: '8px' }}>{coin.symbol}</span>
+                        <img src={coin.icon} alt={coin.symbol} style={{ width: 32, height: 32 }} />
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+            <button className="prices-btn" onClick={() => setShowMore((prev) => !prev)}>
+              {showMore ? 'إخفاء العملات الإضافية' : 'أسعار العملات'}
+            </button>
+          </div>
+        </div>
+        <div style={{textAlign: 'center', margin: '48px 0 0 0', fontSize: '1.15rem', color: '#5a4be7', fontWeight: '500', background: '#f5f3ff', borderRadius: '18px', padding: '18px 12px', boxShadow: '0 2px 12px #e0d8fa'}}>
+          انطلق بثقة في عالم العملات الرقمية منصتك الآمنة والحديثة لبيع وشراء العملات الرقمية بسهولة وشفافية<br />استمتع بأفضل الأسعار وسرعة التنفيذ ودعم متواصل<br />معنا أنت في قلب المستقبل المالي ابدأ الآن وكن جزءًا من الثورة الرقمية
         </div>
     </div>
     );
