@@ -120,7 +120,7 @@ function App() {
                     type="number"
                     placeholder="0.00"
                     className="amount-input"
-                    value={amount ? (isSell ? (parseFloat(amount) * 1.02).toFixed(2) : (parseFloat(amount) * 0.98).toFixed(2)) : ''}
+                    value={amount ? (parseFloat(amount) * 0.98).toFixed(2) : ''}
                     readOnly
                   />
                 </div>
